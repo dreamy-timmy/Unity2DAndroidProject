@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        speed = 0f;
+        // speed = 0f;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();   
     }
@@ -31,14 +31,14 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput*speed, rb.velocity.y);
 
-        if (speed == 0f) 
+        if (moveInput == 0) 
         {
             anim.SetBool("isLeftRounding", false); // anim.SetBool("isRunning", false);
             anim.SetBool("isRightRounding", false);
         }
-        else if (speed > 0f) 
+        else if (moveInput > 0) 
         {
             anim.SetBool("isRightRounding", true);
             anim.SetBool("isLeftRounding", false); 
@@ -49,6 +49,23 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isLeftRounding", true); 
             anim.SetBool("isRightRounding", false);
         }
+
+        // if (speed == 0f) 
+        // {
+        //     anim.SetBool("isLeftRounding", false); // anim.SetBool("isRunning", false);
+        //     anim.SetBool("isRightRounding", false);
+        // }
+        // else if (speed > 0f) 
+        // {
+        //     anim.SetBool("isRightRounding", true);
+        //     anim.SetBool("isLeftRounding", false); 
+            
+        // }
+        // else
+        // {
+        //     anim.SetBool("isLeftRounding", true); 
+        //     anim.SetBool("isRightRounding", false);
+        // }
     
     }
     public void OnLeftButtonDown()

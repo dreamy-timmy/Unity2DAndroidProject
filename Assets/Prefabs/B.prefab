@@ -195,3 +195,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotButton: {fileID: 2976775170341508188, guid: e2a57c2b5ae297c4bad9e60920d20232, type: 3}
+  id: -1
