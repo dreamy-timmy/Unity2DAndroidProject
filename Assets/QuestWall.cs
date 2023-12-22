@@ -13,7 +13,7 @@ public class QuestWall : MonoBehaviour
     {
         if(other.tag != "Player" && other.GetComponent<Pickup>().id == 6)
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);  
             anim.SetTrigger("IsTriggered");
         }
     }
