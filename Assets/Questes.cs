@@ -8,8 +8,8 @@ public class Questes : MonoBehaviour
    public int  wordLength;
    public int[] items;
    public GameObject key;
-   public GameObject Quest;
- 
+   public GameObject startQuest;
+   public GameObject endQuest;
     public GameObject[] word;  // = new GameObject[wordLength] ;
 
    public void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +23,8 @@ public class Questes : MonoBehaviour
             if (questNumber == wordLength) 
             {
                 key.SetActive(true);
-                Quest.SetActive(false);
+                // startQuest.SetActive(false);
+                endQuest.SetActive(true);
                 foreach(var letter in word) letter.SetActive(true);
                 
                 // foreach(var letter in word)
